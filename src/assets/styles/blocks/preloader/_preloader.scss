@@ -1,0 +1,121 @@
+@use "../../h";
+
+
+.preloader__animation {
+    width: 300rem;
+    height: 300rem;
+}
+
+.loadbar__wrapper {
+    position: relative;
+    width: 200rem;
+    height: 20rem;
+    overflow: hidden;
+    margin-bottom: 9rem;
+    clip-path: polygon(0 0, 100% 0%, 80% 0, 100% 100%, 0 100%);
+
+    .loadbar {
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        background-color: #FFFFFF;
+        box-shadow: 0px 0px 6px 7px rgba(255, 255, 255, 0.9);
+        z-index: 100;
+    }
+}
+
+.loadbar__text {
+    font-size: 12rem;
+    font-weight: 300;
+    color: #A1A1A1;
+}
+
+p {
+    color: #FFFFFF;
+    font-size: 14rem;
+    margin: 0;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    @include h.vp-768 {
+       flex-direction: row;
+    }
+
+    .footer__text {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 16rem;
+
+        @include h.vp-768 {
+            width: 30%;
+            margin-bottom: 0;
+        }
+    }
+
+    .preloader__first {
+        width: 30%;
+    }
+
+    .preloader__loading {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        width: none;
+
+        @include h.vp-768 {
+            width: 30%;
+            padding-right: 20px;
+        }
+        
+        .preloader__percent {
+            color: #FFFFFF;
+            font-size: 50rem;
+            margin-right: 10rem;
+        }
+    }
+}
+
+
+.preloader {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100vh;
+    padding: 10rem 20rem;
+    background-color: rgb(0, 0, 0);
+
+    @include h.vp-768 {
+       padding: 34rem 40rem;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+
+        span {
+            text-align: center;
+            color: #FFFFFF;
+            font-size: 14rem;
+            margin: 0;
+        }
+
+        p {
+            width: 30%;
+
+            &:last-child {
+                text-align: end;
+            }
+        }
+    }
+
+    &__main {
+        display: flex;
+        justify-content: center;
+    }
+}
+

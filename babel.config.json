@@ -1,0 +1,4 @@
+{
+    "targets": "last 4 years",
+    "presets": ["@babel/preset-env"]
+}

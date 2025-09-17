@@ -1,0 +1,20 @@
+@use "variables";
+
+
+@mixin vp-768 {
+  @media (min-width: variables.$vp-768) {
+    @content;
+  }
+}
+
+@mixin vp-1280 {
+  @media (min-width: variables.$vp-1280) {
+    @content;
+  }
+}
+
+@mixin vp-1920 {
+  @media (min-width: variables.$vp-1920) {
+    @content;
+  }
+}
