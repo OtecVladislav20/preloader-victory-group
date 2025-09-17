@@ -1,6 +1,6 @@
 export default function loaderAnimation() {
-    const progressBar = document.querySelector('.preloader__footer__loading__bar__wrapper__loadbar');
-    const percentElement = document.querySelector('.preloader__footer__loading__percent');
+    const progressBar = document.querySelector('.preloader__footer-bar__wrapper-loadbar');
+    const percentElement = document.querySelector('.preloader__footer-percent');
     const percentScreen = document.querySelector('.preloader');
 
     if (!progressBar || !percentElement || !percentScreen) {

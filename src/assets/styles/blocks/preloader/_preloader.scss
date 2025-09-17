@@ -21,22 +21,26 @@
         display: flex;
         justify-content: space-between;
 
-        &__left {
+        &-left {
             color: #FFFFFF;
             font-size: 14rem;
             margin: 0;
             width: 30%;
         }
 
-        &__center {
+        &-center {
             color: #FFFFFF;
             text-align: center;
             font-size: 14rem;
             margin: 0;
-            width: 30%;
+            width: 100%;
+
+            @include h.vp-768 {
+                width: 30%;
+            }
         }
 
-        &__right {
+        &-right {
             color: #FFFFFF;
             font-size: 14rem;
             margin: 0;
@@ -49,7 +53,7 @@
         display: flex;
         justify-content: center;
 
-        &__animation {
+        &-animation {
             width: 300rem;
             height: 300rem;
         }
@@ -65,11 +69,11 @@
            flex-direction: row;
         }
         
-        &__left {
+        &-left {
             width: 30%;
         }
 
-        &__text {
+        &-text {
             color: #FFFFFF;
             text-align: center;
             font-size: 14rem;
@@ -82,7 +86,40 @@
             }
         }
 
-        &__loading {
+        &-percent {
+            color: #FFFFFF;
+            font-size: 50rem;
+            margin-right: 10rem;
+        }
+
+        &-bar {
+            &-text {
+                font-size: 12rem;
+                font-weight: 300;
+                color: #A1A1A1;
+            }
+
+            &__wrapper {
+                position: relative;
+                width: 200rem;
+                height: 20rem;
+                overflow: hidden;
+                margin-bottom: 9rem;
+                clip-path: polygon(0 0, 100% 0%, 80% 0, 100% 100%, 0 100%);
+
+                &-loadbar {
+                    position: absolute;
+                    height: 100%;
+                    width: 0%;
+                    background-color: #FFFFFF;
+                    box-shadow: 0px 0px 6px 7px rgba(255, 255, 255, 0.9);
+                    z-index: 100;
+                }
+            }
+
+        }
+
+        &-loading {
             display: flex;
             align-items: center;
             justify-content: end;
@@ -91,38 +128,6 @@
             @include h.vp-768 {
                 width: 30%;
                 padding-right: 20px;
-            }
-
-            &__percent {
-                color: #FFFFFF;
-                font-size: 50rem;
-                margin-right: 10rem;
-            }
-
-            &__bar {
-                &__text {
-                    font-size: 12rem;
-                    font-weight: 300;
-                    color: #A1A1A1;
-                }
-
-                &__wrapper {
-                    position: relative;
-                    width: 200rem;
-                    height: 20rem;
-                    overflow: hidden;
-                    margin-bottom: 9rem;
-                    clip-path: polygon(0 0, 100% 0%, 80% 0, 100% 100%, 0 100%);
-
-                    &__loadbar {
-                        position: absolute;
-                        height: 100%;
-                        width: 0%;
-                        background-color: #FFFFFF;
-                        box-shadow: 0px 0px 6px 7px rgba(255, 255, 255, 0.9);
-                        z-index: 100;
-                    }
-                }
             }
         }
     }
