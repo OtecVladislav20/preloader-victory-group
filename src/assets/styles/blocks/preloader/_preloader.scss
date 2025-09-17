@@ -1,87 +1,11 @@
 @use "../../h";
 
-
-.preloader__animation {
-    width: 300rem;
-    height: 300rem;
-}
-
-.loadbar__wrapper {
-    position: relative;
-    width: 200rem;
-    height: 20rem;
-    overflow: hidden;
-    margin-bottom: 9rem;
-    clip-path: polygon(0 0, 100% 0%, 80% 0, 100% 100%, 0 100%);
-
-    .loadbar {
-        position: absolute;
-        height: 100%;
-        width: 0%;
-        background-color: #FFFFFF;
-        box-shadow: 0px 0px 6px 7px rgba(255, 255, 255, 0.9);
-        z-index: 100;
-    }
-}
-
-.loadbar__text {
-    font-size: 12rem;
-    font-weight: 300;
-    color: #A1A1A1;
-}
-
-p {
-    color: #FFFFFF;
-    font-size: 14rem;
-    margin: 0;
-}
-
-footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-
-    @include h.vp-768 {
-       flex-direction: row;
-    }
-
-    .footer__text {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 16rem;
-
-        @include h.vp-768 {
-            width: 30%;
-            margin-bottom: 0;
-        }
-    }
-
-    .preloader__first {
-        width: 30%;
-    }
-
-    .preloader__loading {
-        display: flex;
-        align-items: center;
-        justify-content: end;
-        width: none;
-
-        @include h.vp-768 {
-            width: 30%;
-            padding-right: 20px;
-        }
-        
-        .preloader__percent {
-            color: #FFFFFF;
-            font-size: 50rem;
-            margin-right: 10rem;
-        }
-    }
-}
-
-
 .preloader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -97,25 +21,110 @@ footer {
         display: flex;
         justify-content: space-between;
 
-        span {
-            text-align: center;
+        &__left {
             color: #FFFFFF;
             font-size: 14rem;
             margin: 0;
+            width: 30%;
         }
 
-        p {
+        &__center {
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 14rem;
+            margin: 0;
             width: 30%;
+        }
 
-            &:last-child {
-                text-align: end;
-            }
+        &__right {
+            color: #FFFFFF;
+            font-size: 14rem;
+            margin: 0;
+            width: 30%;
+            text-align: end;
         }
     }
 
     &__main {
         display: flex;
         justify-content: center;
+
+        &__animation {
+            width: 300rem;
+            height: 300rem;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        @include h.vp-768 {
+           flex-direction: row;
+        }
+        
+        &__left {
+            width: 30%;
+        }
+
+        &__text {
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 14rem;
+            margin-bottom: 16rem;
+            width: 100%;
+
+            @include h.vp-768 {
+                width: 30%;
+                margin-bottom: 0;
+            }
+        }
+
+        &__loading {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            width: none;
+
+            @include h.vp-768 {
+                width: 30%;
+                padding-right: 20px;
+            }
+
+            &__percent {
+                color: #FFFFFF;
+                font-size: 50rem;
+                margin-right: 10rem;
+            }
+
+            &__bar {
+                &__text {
+                    font-size: 12rem;
+                    font-weight: 300;
+                    color: #A1A1A1;
+                }
+
+                &__wrapper {
+                    position: relative;
+                    width: 200rem;
+                    height: 20rem;
+                    overflow: hidden;
+                    margin-bottom: 9rem;
+                    clip-path: polygon(0 0, 100% 0%, 80% 0, 100% 100%, 0 100%);
+
+                    &__loadbar {
+                        position: absolute;
+                        height: 100%;
+                        width: 0%;
+                        background-color: #FFFFFF;
+                        box-shadow: 0px 0px 6px 7px rgba(255, 255, 255, 0.9);
+                        z-index: 100;
+                    }
+                }
+            }
+        }
     }
 }
 
